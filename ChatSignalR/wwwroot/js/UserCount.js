@@ -8,7 +8,7 @@ connectioToUserHub.on("updateTotalViews", (value) => {
 })
 //invoke hub methods aka send notification to hub
 function newWindowLoadedOnClient() {
-    connectionUserCount.send("NewWindowLoaded");
+    connectioToUserHub.send("NewWindowLoaded");
 }
 
 //start connection
@@ -20,4 +20,4 @@ function rejected() {
     //rejected logs
 }
 
-connectionUserCount.start().then(fulfilled, rejected);
+connectioToUserHub.start().then(fulfilled, rejected);
